@@ -1,0 +1,28 @@
+<odoo>
+    <data>
+
+        <record model="ir.actions.act_window" id="sale_update_list_action">
+            <field name="name">Sale Update</field>
+            <field name="res_model">sale.order</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+         <record model="ir.ui.view" id="sale_update_form_view">
+            <field name="name">Sale Update</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='order_line']//tree//field[@name='price_unit']" position="before">
+                    <field name="marge_porcentaje"/>
+                </xpath>
+
+                 <field name="amount_total" position="after">
+                    <field name="margen_porcentaje_venta" />
+                </field>
+
+            </field>
+        </record>
+
+    </data>
+</odoo>
