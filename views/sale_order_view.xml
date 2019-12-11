@@ -17,6 +17,10 @@
                     <field name="marge_porcentaje"/>
                 </xpath>
 
+                <xpath expr="//field[@name='order_line']//tree//field[@name='price_unit']" position="after">
+                    <field name="stock_disponible"/>
+                </xpath>
+
                  <field name="amount_total" position="after">
                     <field name="margen_porcentaje_venta" />
                 </field>
